@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0d14;
+  --surface: #1a1b26;
+  --surface2: #16213e;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-dashed: rgba(255, 255, 255, 0.15);
+  --text: #e2e8f0;
+  --muted: #64748b;
+  --accent: #4f8ef7;
+  --green: #22c55e;
+  --red: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
+
+/* Modal backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dashed button border */
+.btn-empty {
+  border: 1px dashed var(--border-dashed);
+  background: var(--surface);
+  transition: all 0.15s ease;
+}
+.btn-empty:hover {
+  border-color: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.06);
+}
+
+/* Tab active style */
+.tab-active {
+  background: var(--accent);
+  color: white;
+}
+
+/* Bridge status */
+.bridge-connected { color: var(--green); }
+.bridge-disconnected { color: var(--red); }
+.bridge-connecting { color: #f59e0b; }
